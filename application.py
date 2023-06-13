@@ -9,7 +9,7 @@ from flask import Flask, render_template, request, jsonify
 
 # mongoDB와 연결
 from pymongo import MongoClient
-client = MongoClient("mongodb+srv://sydney:sparta@dx-cluster.nbvksnf.mongodb.net/?retryWrites=true&w=majority")
+client = MongoClient("////////")
 db = client.news_data
 
 # 네이버뉴스로 조회 가능한 뉴스 기사의 정보 스크래핑하는 함수
@@ -26,7 +26,6 @@ def scrap_news(keyword): # start_date, end_date
     last_updated = datetime.now().strftime("%Y%m%d %H:%M") # current date
 
     # 이미 가져온 기사와 겹치지 않게
-    client = MongoClient('mongodb+srv://sydney:sparta@dx-cluster.nbvksnf.mongodb.net/?retryWrites=true&w=majority')
     db = client.news_data
 
     # DB에 저장된 가장 최근 뉴스 가져옴
@@ -200,7 +199,7 @@ def scrap_news(keyword): # start_date, end_date
 def get_summary(df):
 
     # 발급받은 API 키 설정
-    OPENAI_API_KEY = "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"
+    OPENAI_API_KEY = "////"
 
     openai.api_key = OPENAI_API_KEY
 
@@ -257,7 +256,7 @@ def get_summary(df):
 
 def search_news(keyword): # start_date, end_date
 
-    client = MongoClient('mongodb+srv://sydney:sparta@dx-cluster.nbvksnf.mongodb.net/?retryWrites=true&w=majority')
+    client = MongoClient('')
     db = client.news_data
 
     # 지정된 키워드와 동일한 경우
